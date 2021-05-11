@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Setono\SyliusJobStatusPlugin\DependencyInjection;
 
-use Setono\SyliusJobStatusPlugin\DependencyInjection\SetonoSyliusJobStatusExtension;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
+use Setono\SyliusJobStatusPlugin\DependencyInjection\SetonoSyliusJobStatusExtension;
 
 /**
  * See examples of tests and configuration options here: https://github.com/SymfonyTest/SymfonyDependencyInjectionTest
