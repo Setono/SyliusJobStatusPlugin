@@ -2,4 +2,5 @@ setono_sylius_job_status:
     ui:
         job_header: Background jobs
         job_subheader: Overview of background jobs
+        jobs: Background jobs
         name: Name
