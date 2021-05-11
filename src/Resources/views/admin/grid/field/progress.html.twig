@@ -1,0 +1,11 @@
+{# @var data \Setono\JobStatusBundle\Entity\JobInterface #}
+{% if data.steps is null %}
+    {{ data.step }}
+{% else %}
+    <div class="ui indicating progress{{ data.failed ? ' error' : '' }}" data-percent="{{ data.progress }}">
+        <div class="bar">
+            <div class="progress"></div>
+        </div>
+        <div class="label">{{ data.step }}/{{ data.steps }}</div>
+    </div>
+{% endif %}

@@ -2,3 +2,10 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en_US
+
+services:
+    Tests\Setono\SyliusJobStatusPlugin\Application\Command\RunFakeJobsCommand:
+        arguments:
+            - "@setono_job_status.starter"
+            - "@event_dispatcher"
+        tags: [console.command]

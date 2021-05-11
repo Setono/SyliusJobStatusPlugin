@@ -9,6 +9,27 @@ sylius_grid:
                 name:
                     type: string
                     label: setono_sylius_job_status.ui.name
+                type:
+                    type: string
+                    label: setono_sylius_job_status.ui.type
+                progress:
+                    type: twig
+                    label: setono_sylius_job_status.ui.progress
+                    path: .
+                    options:
+                        template: "@SetonoSyliusJobStatusPlugin/admin/grid/field/progress.html.twig"
+                startedAt:
+                    type: datetime
+                    label: setono_sylius_job_status.ui.started_at
+                updatedAt:
+                    type: datetime
+                    label: setono_sylius_job_status.ui.updated_at
+                failedAt:
+                    type: datetime
+                    label: setono_sylius_job_status.ui.failed_at
+                finishedAt:
+                    type: datetime
+                    label: setono_sylius_job_status.ui.finished_at
 # todo add filters
 #            filters:
 #                search:

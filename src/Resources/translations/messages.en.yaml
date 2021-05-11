@@ -1,6 +1,12 @@
 setono_sylius_job_status:
     ui:
+        failed_at: Failed at
+        finished_at: Finished at
         job_header: Background jobs
         job_subheader: Overview of background jobs
         jobs: Background jobs
         name: Name
+        progress: Progress
+        started_at: Started at
+        type: Type
+        updated_at: Updated at

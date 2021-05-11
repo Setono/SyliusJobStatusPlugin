@@ -2,6 +2,10 @@
 <container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://symfony.com/schema/dic/services"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <!-- Put your services here -->
+        <service id="setono_sylius_job_status.custom_factory.job"
+                 class="Setono\SyliusJobStatusPlugin\Factory\JobFactory"
+                 decorates="setono_sylius_job_status.factory.job" decoration-priority="64">
+            <argument type="service" id="setono_sylius_job_status.custom_factory.job.inner"/>
+        </service>
     </services>
 </container>
