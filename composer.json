@@ -1,7 +1,7 @@
 {
-    "name": "setono/sylius-plugin-skeleton",
+    "name": "setono/sylius-job-status-plugin",
     "type": "symfony-bundle",
-    "description": "Acme example plugin for Sylius.",
+    "description": "Sylius plugin that integrates the job status bundle",
     "keywords": [
         "sylius",
         "sylius-plugin"
@@ -43,12 +43,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Acme\\SyliusExamplePlugin\\": "src/"
+            "Setono\\SyliusJobStatusPlugin\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Acme\\SyliusExamplePlugin\\": "tests/"
+            "Tests\\Setono\\SyliusJobStatusPlugin\\": "tests/"
         },
         "classmap": [
             "tests/Application/Kernel.php"
@@ -61,7 +61,7 @@
             "psalm"
         ],
         "check-style": "ecs check",
-        "ensure-test-container-exists": "[[ -f tests/Application/var/cache/test/Tests_Acme_SyliusExamplePlugin_Application_KernelTestDebugContainer.xml ]] || tests/Application/bin/console cache:warmup --env=test",
+        "ensure-test-container-exists": "[[ -f tests/Application/var/cache/test/Tests_Setono_SyliusJobStatusPlugin_Application_KernelTestDebugContainer.xml ]] || tests/Application/bin/console cache:warmup --env=test",
         "fix-style": "ecs check --fix",
         "phpunit": "phpunit"
     }
