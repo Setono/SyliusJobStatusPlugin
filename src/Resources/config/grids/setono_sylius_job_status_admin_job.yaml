@@ -1,0 +1,18 @@
+sylius_grid:
+    grids:
+        setono_sylius_job_status_admin_job:
+            driver:
+                options:
+                    class: "%setono_sylius_job_status.model.job.class%"
+            limits: [50, 100, 250, 500, 1000]
+            fields:
+                name:
+                    type: string
+                    label: setono_sylius_job_status.ui.name
+# todo add filters
+#            filters:
+#                search:
+#                    type: string
+#                    label: setono_sylius_consent_management.ui.search
+#                    options:
+#                        fields: [ clientId, ip ]

@@ -5,9 +5,17 @@ declare(strict_types=1);
 namespace Setono\SyliusJobStatusPlugin;
 
 use Sylius\Bundle\CoreBundle\Application\SyliusPluginTrait;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Sylius\Bundle\ResourceBundle\AbstractResourceBundle;
+use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 
-final class SetonoSyliusJobStatusPlugin extends Bundle
+final class SetonoSyliusJobStatusPlugin extends AbstractResourceBundle
 {
     use SyliusPluginTrait;
+
+    public function getSupportedDrivers(): array
+    {
+        return [
+            SyliusResourceBundle::DRIVER_DOCTRINE_ORM,
+        ];
+    }
 }

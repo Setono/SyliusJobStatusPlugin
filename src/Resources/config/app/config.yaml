@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@SetonoSyliusJobStatusPlugin/Resources/config/grids/setono_sylius_job_status_admin_job.yaml" }
