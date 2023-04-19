@@ -6,6 +6,6 @@ parameters:
 services:
     Tests\Setono\SyliusJobStatusPlugin\Application\Command\RunFakeJobsCommand:
         arguments:
-            - "@setono_job_status.starter"
+            - "@setono_job_status.manager.job"
             - "@event_dispatcher"
         tags: [console.command]
