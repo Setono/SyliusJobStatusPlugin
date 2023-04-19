@@ -5,7 +5,7 @@ namespace Tests\Setono\SyliusJobStatusPlugin\Application\Command;
 
 use Psr\EventDispatcher\EventDispatcherInterface;
 use Setono\JobStatusBundle\Event\StepCompletedEvent;
-use Setono\JobStatusBundle\Starter\StarterInterface;
+use Setono\JobStatusBundle\Manager\JobManagerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -14,14 +14,14 @@ final class RunFakeJobsCommand extends Command
 {
     protected static $defaultName = 'app:run-fake-jobs';
 
-    private StarterInterface $starter;
+    private JobManagerInterface $jobManager;
     private EventDispatcherInterface $eventDispatcher;
 
-    public function __construct(StarterInterface $starter, EventDispatcherInterface $eventDispatcher)
+    public function __construct(JobManagerInterface $jobManager, EventDispatcherInterface $eventDispatcher)
     {
         parent::__construct();
 
-        $this->starter = $starter;
+        $this->jobManager = $jobManager;
         $this->eventDispatcher = $eventDispatcher;
     }
 
@@ -38,7 +38,7 @@ final class RunFakeJobsCommand extends Command
 
         $config = self::getJobConfig();
         foreach ($config as $key => $jobConfig) {
-            $jobs[$key] = $this->starter->start(null, $jobConfig['steps'], true);
+            $jobs[$key] = $this->jobManager->start(null, $jobConfig['steps']);
         }
 
         do {
